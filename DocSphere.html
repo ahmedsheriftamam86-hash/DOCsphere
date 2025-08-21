@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOCsphere</title>
+    <link rel="stylesheet" href="Doc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+         <header> 
+            <h1 class="logo">DOCsphere</h1>
+
+            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+
+            <nav>
+               <a href="#">الرئيسية</a>
+               <a href="#">خدماتنا</a>
+               <a href="#">من نحن</a>
+               <a href="#">حساب</a>
+            </nav>
+            <button class="btn-signing"><a href="sign-in.html"> تسجيل</a></button>
+         </header>
+
+        <div class="container">
+         <main>
+            <div class="content">
+               <section class="text">
+               <h1><span class="d">DOCsphere</span>اصبح من السهل تقفد صحتك مع </h1>
+               <h4>تفقد اطبائك واسأل ذكاءنا الاصطناعي</h4>
+              </section>
+              <div class="slogan">
+               <h1>الاطباء في كل مكان</h1></div>
+              <div class="info-cards">
+                <div class="card">
+                   <h1>تفقد اطبائنا</h1>
+                   <p>اطبائناالمختصين في كل مكان في مصر</p>
+                   <video src="untitled design.mp4"autoplay loop muted playes-inline></video>
+                   <button class="btn"><a href="DOCTORS/DOCTORS.html">تفقد اطباء</a></button>
+                </div>
+                <div class="card">
+                   <h1>ذكاءنا الاصطناعي</h1>
+                   <p>قابل ذكائنا الاصطناعي المطور لتحليل وتشخيص الامراض <br>انه ك طبيبك المختص</p>
+                   <video src="Untitled 2design.mp4"autoplay loop muted plays-inline></video>
+                   <button class="btn"><a href="AI/DOCBOT.html">الذكاء الاصطناعي</a></button>
+                 </div>
+              </div>
+              
+              <section class="about">
+               <h1>من نحن</h1>
+               <h2>موقعنا كمستشفي كامله ولكن بضغطة زر </h2>
+              </section>
+            </div>  
+            <section class="footer">
+               <p>© 2025 كل الحقوق محفوظة</p>
+               <div class="social-icons">
+                     <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                     <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                     <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                     <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                     <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                     <a href="https://behance.com" target="_blank"><i class="fab fa-behance"></i></a>
+               </div>
+          </section>
+         </main>
+        </div>
+      <script>
+         const menuToggle = document.querySelector('.menu-toggle');
+         const nav = document.querySelector('nav');
+
+         menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('show');
+         });
+         document.querySelector(".menu-btn").addEventListener("click", function(){
+          document.querySelector(".menu").classList.toggle("show");
+          });
+      </script>
+
+</body>
+</html>

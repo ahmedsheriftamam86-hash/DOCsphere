@@ -1,0 +1,96 @@
+/* إعدادات أساسية */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* الصندوق الأساسي */
+main {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    width: 320px;
+}
+
+/* المسافات بين كل عنصر */
+.EMAIL, .user-name, .password {
+    margin-bottom: 20px;
+}
+
+/* تصميم الحقول */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: #f1f1f1;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+/* التأثير عند التركيز */
+input[type="text"]:focus {
+    outline: none;
+    border-color: #0072ff;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,114,255,0.2);
+}
+
+/* لون النص الوهمي */
+input::placeholder {
+    color: #888;
+}
+
+/* أنيميشن دخول الصندوق */
+main {
+    animation: fadeInUp 0.8s ease;
+    width: 600px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+main h1{
+    text-align: center;
+    color:#0072ff ;
+    font-size: 20px;
+}
+.sign button{
+    background-color: lightgray;
+    color: black;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    border: none;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    justify-content: center;
+    justify-self: center;
+    position: fixed;
+}
+.sign button:hover{
+      background: linear-gradient(to right,#00cfff, lightblue);
+     transform: scale(1.05);
+     box-shadow: 0 0 20px #00cfff;
+}
+.sign button a{
+    text-decoration: none;
+    color: #028372;
+}

@@ -1,0 +1,391 @@
+html, body {
+    overflow-x: hidden;
+}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: white;
+    color: #e7e7e7;
+    min-height: 100vh;
+    line-height: 1.5;
+    overflow-x: hidden;
+    background-size: 600% 600%;
+    animation: gradientMove 10s ease infinite;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #007C91;
+}
+
+/* اللوجو */
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(to right, white, #007C91, white);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #0099ff;
+}
+
+.btn-signing{
+    background-color: lightgray;
+    color: black;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-signing:hover{
+    background: linear-gradient(to right,#00cfff, lightblue);
+     transform: scale(1.05);
+    box-shadow: 0 0 20px #00cfff;
+}
+@keyframes animate-gradient{
+    to{
+        background-position: 200%;
+    }
+}
+@keyframes glow {
+    from { text-shadow: 0 0 5px #0099ff, 0 0 10px #00cfff; }
+    to { text-shadow: 0 0 20px #034570, 0 0 40px #035769; }
+}
+
+.heading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heading h1{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(to right, white, #0099ff, white);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+    animation: gradientMove 10s ease infinite;
+    border: 3px solid white;
+    border-radius: 20px;
+}
+
+.chat-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+
+#chat-box {
+  position: relative;
+  background: #2a2a2a;
+  border-radius: 12px;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  color: white;
+}
+
+#input-area {
+  display: flex;
+  padding: 10px;
+  background: #1f1f1f;
+  border-top: 1px solid #444;
+}
+
+#input-area input {
+  flex: 1;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  margin-right: 10px;
+  background: linear-gradient(270deg, white, gray, white);
+  color: black;
+  animation: gradientMove 10s ease infinite;
+  transition: 0.3s ease;
+}
+
+#input-area input:hover {
+  background: linear-gradient(to right, #00cfff, lightblue);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00cfff;
+}
+#input-area button {
+  border-radius: 50px;
+  border: none;
+  padding: 0 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: lightgray;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#input-area button:hover {
+  background: linear-gradient(to right, #00cfff, lightblue);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00cfff;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes slideUpFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.user-msg, .bot-msg {
+  animation: slideUpFadeIn 0.5s ease forwards;
+  background-color: white;       
+  color: black;                  
+  border: 2px solid #0099ff;     
+  border-radius: 12px;           
+  padding: 10px 15px;            
+  margin: 8px 0;                
+  max-width: 70%;              
+  word-wrap: break-word;         
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+}
+
+.user-msg {
+  align-self: flex-end;        
+  background-color: #e0f7fa;     
+  border-color: #00acc1;        
+  color: #006064;                
+}
+
+.bot-msg {
+  align-self: flex-start;        
+  background-color: #ffffff;     
+  border-color: #0099ff;         
+  color: #000000;               
+}
+
+
+
+@keyframes inputRiseFadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+#input-area.animate-out {
+  animation: inputRiseFadeOut 0.4s ease forwards;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 3000;
+  position: relative;
+}
+
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: block;
+  }
+
+    nav {
+    display: flex; /* نغير من none لـ flex عشان الانيميشن يشتغل */
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 250px; /* عرض القائمة */
+    height: 100vh;
+    background-color: rgba(0,0,0,0.95);
+    padding-top: 1rem;
+    z-index: 2000;
+    border-radius: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  nav.active {
+    transform: translateX(0);
+  }
+
+  nav a {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #0099ff;
+    font-size: 1.2rem;
+    color: white;
+  }
+
+  nav a:hover {
+    background-color: #0099ff;
+    color: white;
+  }
+
+  .btn-signing {
+    display: none;
+  }
+
+  .chat-container {
+    padding: 0 1rem;
+  }
+  #chat-box {
+    height: 400px; 
+  }
+  #input-area input {
+    font-size: 0.9rem;
+  }
+  #input-area button {
+    padding: 0 15px;
+    font-size: 0.9rem;
+  }
+  .footer {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    .social-icons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+
+@media (min-width: 601px) and (max-width: 900px) {
+  header {
+    padding: 1rem 3rem;
+  }
+  .menu-toggle {
+        display: block; /* يظهر زر القائمة */
+    }
+  nav {
+    gap: 1.5rem;
+  }
+  #chat-box {
+    height: 450px;
+  }
+  #input-area input {
+    font-size: 1rem;
+  }
+  #input-area button {
+    font-size: 1rem;
+  }
+  .footer {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    .social-icons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+
+.social-icons {
+    margin: 2rem 0;
+    display: flex;
+}
+
+.social-icons a {
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    transition: 0.3s;
+    background: linear-gradient(to right , white,#007C91,white );
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 10s ease infinite;
+    animation: animate-gradient 2.5s linear infinite
+}
+
+.social-icons a:hover {
+    color: white;
+    transform: scale(1.2);
+}
+
+.footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #007C91;
+    backdrop-filter: blur(10px);
+    height: 100px;
+    transition: 0.3s ease;
+    border-radius: 20px;
+}
+
+.footer p{
+    margin: 0 20px;
+}
+
+.footer a{
+    text-decoration: none;
+    color: white;
+    padding: 7px 7px;
+    transition: 0.3s ease;
+}
+
+.footer:hover{
+    box-shadow: 0 0 20px rgb(5, 5, 5);
+}
